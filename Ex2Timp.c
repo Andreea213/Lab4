@@ -103,7 +103,7 @@ int main() {
         memcpy(copie, original, N * sizeof(int)); 
         
         start = clock();
-        if (alg == 0) bubbleSort(work, N);
+        if (alg == 0) bubbleSort(copie, N);
         else if (alg == 1) selectionSort(copie, N);
         else if (alg == 2) insertionSort(copie, N);
         else if (alg == 3) quickSort(copie, 0, N - 1);
