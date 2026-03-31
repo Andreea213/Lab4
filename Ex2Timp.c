@@ -86,12 +86,12 @@ int main() {
     int *original = malloc(N * sizeof(int));
     int *work = malloc(N * sizeof(int));
     clock_t start, end;
-    double cpu_time_used;
+    double timp;
 
-    // Generare 10.000 valori random
+    
     srand(time(NULL));
     for (int i = 0; i < N; i++) {
-        original[i] = rand() % 50000; // Valori intre 0 si 49999
+        original[i] = rand() % 50000; 
     }
 
     const char *names[] = {"Bubble Sort", "Selection Sort", "Insertion Sort", "Quick Sort", "Merge Sort"};
@@ -111,7 +111,7 @@ int main() {
         end = clock();
 
         cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-        printf("%-15s: %f secunde\n", names[alg], cpu_time_used);
+        printf("%-15s: %f secunde\n", names[alg], timp);
     }
 
     free(original);
