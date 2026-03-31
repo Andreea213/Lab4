@@ -84,7 +84,7 @@ void mergeSort(int arr[], int l, int r) {
 
 int main() {
     int *original = malloc(N * sizeof(int));
-    int *work = malloc(N * sizeof(int));
+    int *copie = malloc(N * sizeof(int));
     clock_t start, end;
     double timp;
 
@@ -100,14 +100,14 @@ int main() {
     printf("----------------------------------------\n");
 
     for (int alg = 0; alg < 5; alg++) {
-        memcpy(work, original, N * sizeof(int)); 
+        memcpy(copie, original, N * sizeof(int)); 
         
         start = clock();
         if (alg == 0) bubbleSort(work, N);
-        else if (alg == 1) selectionSort(work, N);
-        else if (alg == 2) insertionSort(work, N);
-        else if (alg == 3) quickSort(work, 0, N - 1);
-        else if (alg == 4) mergeSort(work, 0, N - 1);
+        else if (alg == 1) selectionSort(copie, N);
+        else if (alg == 2) insertionSort(copie, N);
+        else if (alg == 3) quickSort(copie, 0, N - 1);
+        else if (alg == 4) mergeSort(copie, 0, N - 1);
         end = clock();
 
         timp = ((double) (end - start)) / CLOCKS_PER_SEC;
@@ -115,7 +115,7 @@ int main() {
     }
 
     free(original);
-    free(work);
+    free(copie);
     
     
 
