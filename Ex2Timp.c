@@ -110,7 +110,7 @@ int main() {
         else if (alg == 4) mergeSort(work, 0, N - 1);
         end = clock();
 
-        cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+        timp = ((double) (end - start)) / CLOCKS_PER_SEC;
         printf("%-15s: %f secunde\n", names[alg], timp);
     }
 
